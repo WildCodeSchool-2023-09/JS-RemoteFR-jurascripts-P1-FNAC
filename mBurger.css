@@ -11,11 +11,10 @@
   height: 50%;
   width: 250px;
   position: fixed;
-  z-index: 1;
   border-bottom-right-radius: 300px;
   top: 0;
   left: -250px;
-  background-color: #e8e8e8;
+  background-color: none;
   padding-top: 60px;
   transition: left 0.5s ease;
 }
@@ -23,7 +22,8 @@
 .side_burger a {
   padding: 8px 8px 8px 32px;
   font-size: 25px;
-  color: #818181;
+  color: black;
+  /* font-weight: 800; */
   display: block;
   transition: 0.3s;
   font-size: 1.1rem;
@@ -31,11 +31,11 @@
 
 .side_burger > a {
   position: fixed;
-  /* color: aqua; */
+  color: #818181;
 }
 .side_burger a:hover {
   transform: scale(1.2);
-  color: #111;
+  color: #613c3c;
 }
 .side_burger ul {
   padding: 0;
@@ -44,6 +44,8 @@
 /* active */
 .side_burger.active {
   left: 0;
+  z-index: 2;
+  opacity: 0.7;
 }
 
 /* close */
@@ -60,7 +62,14 @@
   display: block;
   width: 35px;
   height: 5px;
-  background: #2f2d2d;
+  background: #613c3c;
   margin: 6px;
   border-radius: 10px;
+}
+
+#btnOpen {
+  z-index: 2;
+  position: absolute;
+  top: 20px;
+  left: 10px;
 }
