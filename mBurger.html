@@ -1,27 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./mBurger.css" />
 
     <title>Rest-0</title>
   </head>
   <body>
     <header>
-      <span class="logo">logo</span>
-      <nav>
-        <ul class="menuBerger">
-          <li>Réferencement</li>
-          <li>Créer mon compte</li>
-          <li>Se connecter</li>
+      <!-- <span class="logo">logo</span> -->
+
+      <div class="side_burger" id="menu">
+        <a href="#" class="close" id="btnClose">×</a>
+        <ul>
+          <li><a href="">Réferencement</a></li>
+          <li><a href="">Créer mon compte</a></li>
+          <li><a href="">Se connecter</a></li>
         </ul>
-      </nav>
+      </div>
+
+      <a href="#" id="btnOpen">
+        <span class="burger_icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </a>
+
       <div class="carrousel">
         <!-- si possible -->
-        <img src="" alt="carrou" />
-        <img src="" alt="carrou" />
-        <img src="" alt="carrou" />
+        <img src="#" alt="carrou" />
+        <img src="#" alt="carrou" />
+        <img src="#" alt="carrou" />
       </div>
     </header>
     <main>
@@ -140,6 +151,6 @@
         </ul>
       </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="./mBurger.js"></script>
   </body>
 </html>
