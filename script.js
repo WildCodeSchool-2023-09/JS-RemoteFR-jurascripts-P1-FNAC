@@ -1,3 +1,4 @@
+/*CARROUSEL*/
 document.body.onload = function () {
   nbrImg = 6;
   p = 0;
@@ -16,11 +17,27 @@ document.body.onload = function () {
   leftButton.onclick = function () {
     if (p > -nbrImg + 1) p--;
     carouselPano.style.transform = "translate(" + p * 100 + "vw)";
-    carouselPano.style.transition = "all 0,8s ease";
+    carouselPano.style.transition = "all 0.8s ease";
   };
   rightButton.onclick = function () {
     if (p < 0) p++;
     carouselPano.style.transform = "translate(" + p * 100 + "vw)";
-    carouselPano.style.transition = "all 0,8s ease";
+    carouselPano.style.transition = "all 0.8s ease";
   };
 };
+
+/*MENU BURGER*/
+let side_burger = document.getElementById("menu");
+let btnOpen = document.getElementById("btnOpen");
+let btnClose = document.getElementById("btnClose");
+
+btnOpen.onclick = openNav;
+btnClose.onclick = closeNav;
+
+function openNav() {
+  side_burger.classList.add("active");
+}
+
+function closeNav() {
+  side_burger.classList.remove("active");
+}
