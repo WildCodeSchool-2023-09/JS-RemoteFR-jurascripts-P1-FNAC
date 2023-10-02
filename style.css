@@ -1,22 +1,23 @@
+/*PRINCIPAL*/
 body,
 header,
 section,
 article {
   background-color: antiquewhite;
   box-sizing: border-box;
-}
+  }
 header {
   height: 40vh;
   width: 100vw;
   padding-bottom: 10px;
   position: relative;
-}
-
+  }
 body {
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   margin: 0;
-}
+  }
 
+/*CARROUSEL*/
 #carousel {
   width: 100vw;
   height: 100%;
@@ -27,14 +28,13 @@ body {
   position: absolute;
   overflow: hidden;
   z-index: 1;
-}
-
+  }
 #carouselPano {
   margin: auto;
   width: 100vw;
   height: 300px;
   z-index: 1;
-}
+  }
 .photo {
   width: 100vw;
   height: 300px;
@@ -43,7 +43,6 @@ body {
   background-size: cover;
   z-index: 1;
 }
-
 .bouton {
   position: absolute;
   width: 35px;
@@ -51,80 +50,154 @@ body {
   top: 125px;
   background-color: none;
 }
-
 #g {
   left: 0;
   opacity: 0.5;
   transform: rotate(0deg);
-}
-
+  }
 #d {
   right: 0;
   opacity: 0.5;
   transform: rotate(180deg);
-}
-
+  }
 #g:hover {
   transform: rotate(0deg) scale(1.1);
   opacity: 1;
   color: antiquewhite;
-}
-
+  }
 #d:hover {
   transform: rotate(180deg) scale(1.1);
   opacity: 1;
   color: antiquewhite;
-}
+  }
 
+/*LOGO DU SITE*/
 .logo img {
   position: relative;
   width: 130px;
   height: 60px;
-  margin-left: 220px;
-  margin-top: 10px;
-  cursor: pointer;
-  z-index: 3;
-}
-
-article {
   margin: 20px;
-  color: white;
+  cursor: pointer;
+  z-index: 2;
+  }
+
+/*MENU BURGER*/
+.side_burger {
+  height: 20.5%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: -250px;
+  background-color: none;
+  padding-top: 60px;
+  transition: right 0.5s ease;
+  }/*links*/
+.side_burger a {
+  padding: 8px;
+  font-size: 25px;
+  color: black;
+  /* font-weight: 800; */
+  display: block;
+  transition: 0.3s;
+  font-size: 1.1rem;
+  text-decoration: none;
+  text-align: center;
+  }
+.side_burger > a {
+  position: fixed;
+  color: #818181;
+  }
+.side_burger a:hover {
+  transform: scale(1.4);
+  font-weight: bold;
+  color: #613c3c;
+  }
+.side_burger ul {
+  padding: 0;
+  margin: 0;
+  }
+.side_burger ul li {
+  list-style: none;
+  }
+/* active */
+.side_burger.active {
+  right: 0;
+  z-index: 2;
+  opacity: 0.8;
+  background-color: #818181;
+  }
+.side_burger .close {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 40px;
+  }
+/* burger_icon */
+.burger_icon span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  background: #613c3c;
+  margin: 6px;
+  border-radius: 10px;
+  }
+#btnOpen {
+  z-index: 2;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  }
+
+/*DESCRIPTION DU SITE*/
+article {
+  padding: 5px;
+  margin: 30px;
+  color: lightgray;
   border-top: 2px #613c3c solid;
   border-bottom: 2px #613c3c solid;
   font-size: small;
-
   &:hover {
-    color: #613c3c;
-    transition: 0.6s ease-in-out;
+   color: #613c3c;
+   transition: 0.6s ease-in-out;
+   }
   }
-}
 
+/*TITRE PRINCIPAL*/
 h1 {
   text-align: center;
   margin-bottom: 30px;
+  font-size: xx-large;
+  font-weight: bold;
 }
 
+/*FILTRES DE RECHERCHE*/
 .filter_searchBar {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 45px 15px 0 30px;
-}
-
+  margin-bottom: 30px;
+  }
 #filterButton {
   cursor: pointer;
-}
-
+  margin-left: auto;
+  margin-right: 5%;
+  padding-top: 6px;
+  }
+label, select, option {
+  visibility: hidden;
+  }
 #searchBar {
   background-color: #ffffff;
   border: 2px #613c3c solid;
   border-radius: 5px;
-  width: 220px;
-  height: 25px;
+  width: 60vw;
+  height: 3vh;
   font-style: italic;
   color: lightgrey;
-}
+  margin-right: auto;
+  }
 
+/*RUBRIQUE DU RESTAURANT*/
 section {
   display: flex;
   flex-direction: column;
@@ -132,113 +205,290 @@ section {
   width: auto;
   height: auto;
   margin-bottom: 50px;
-}
-
+  }
 section img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-}
-
-section h2 {
-  margin: 0.5rem 2px 2px;
-}
-
+  }
+.titleNote {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding-left: 20px;
+  }
+.titleNote h2 {
+  margin-left:0 auto;
+  }
+#star {
+  color: gold;
+  padding-left: 2px;
+  font-size: 20px;
+  }
 section h3 {
   font-size: small;
   font-weight: normal;
   color: #818181;
   margin: 0;
   padding: 0;
-}
-
+  }
 section p {
-  margin: 5px 20px;
+  padding: 5px 20px;
   line-height: 1.25;
-}
-
-section h5 {
-  display: flex;
-  align-items: center;
-  margin: 10px;
-  width: 100%;
-}
-
+  margin-bottom: 20px;
+  }
 .bottomCard {
   display: flex;
-  align-items: center;
-}
-
-.price {
-  margin-left: 20px;
-}
-
-.note {
-  margin-right: 1px;
-  margin-left: 180px;
-}
-
-.star {
-  margin-left: 1px;
-  width: 20px;
-  height: 20px;
-  margin-bottom: 5px;
-}
-
-section button {
-  cursor: pointer;
-  background-color: white;
-  border-radius: 50px;
-  border: 2px #613c3c solid;
+  justify-content: space-between;
+  width: 100%;
   font-size: medium;
-  padding: 10px 20px;
-}
+  text-align: center;
+  align-items: center;
+  }
+.price {
+  padding-left: 20px;
+  }
 
-section button:hover {
-  cursor: pointer;
-  background-color: #613c3c;
+
+/*BOUTON DE RESERVATION*/
+.btn2 {
+  --size: 30px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #613c3c;
+  font-size: 15px;
+  font-weight: bold;
+  height: var(--size);
+  padding-inline: 50px 35px;
+  transition: color 0.5s;
+  text-decoration: none;
+  z-index: 3;
+  }
+.btn2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: var(--size);
+  width: var(--size);
+  border-radius: var(--size);
+  background: #613c3c
+  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 41" width="25" height="15"><path d="M 33 2 L 48 20 L 33 38" stroke-width="6" stroke="rgb(255, 255, 255)" fill="none"/></svg>')
+  left center no-repeat;
+  transition: width 0.5s, background-position 0.5s;
+  }
+.btn2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: var(--size);
+  width: var(--size);
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 41" width="20" height="20"><path d="M 0 20 L 48 20" stroke-width="6" stroke="rgb(255, 255, 255)" class="btn__arrow-body" fill="none"/></svg>')
+  left 0.5px center no-repeat;
+  transition: transform 0.5s, opacity 0.5s;
+  opacity: 0;
+  }
+.btn2:hover {
   color: white;
-}
+  }
+.btn2:hover::before {
+  width: 100%;
+  background-position: left 14px center;
+  }
+.btn2:hover::after {
+  opacity: 1;
+  transform: translateX(15px);
+  }
 
+/*FOOTER*/
 footer {
   background-color: black;
   color: white;
   width: 100%;
-  height: 100px;
-  margin: 0;
+  height: auto;
+  margin: auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footerLeft {
-  background-color: black;
-  color: white;
-  position: absolute;
-  float: left;
-  width: 33%;
-  border-right: 10px white solid;
-}
-
-.footerMiddle {
-  background-color: black;
-  color: white;
-  position: absolute;
-  width: 33%;
-  border-right: 10px white solid;
-}
-
-.footerRight {
-  background-color: black;
-  color: white;
-  position: absolute;
-  float: right;
-  width: 33%;
-}
-*/ footer h6 {
-  background-color: black;
-  color: white;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  text-align: center;
+  }
+footer ul li {
+  list-style: none;
+  padding: 5px;
   margin: 0;
-  padding: 0;
+  display: inline-block;
+  }
+footer h6 {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  margin: 0;
+  }
+
+
+
+/*MEDIA QUERIES*/
+
+/* DESKTOP */  @media screen and (min-width: 768px) {
+
+/*DESKTOP - DESCRIPTION DU SITE*/
+article {
+  padding: 5px;
+  margin: 100px 150px;
+  font-size: large;
+  text-align: center;
+  }
+
+/*DESKTOP - TITRE PRINCIPAL*/
+h1 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 100px;
+  }
+
+/* DESKTOP - FILTRES DE RECHERCHE*/
+#filterButton {
+  visibility: hidden;
+  }
+.desktopFilters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  }
+label, select, option {
+  display: block;
+  visibility: visible; 
+  min-height: 20px;
+  }
+#filterType, #filterPrice {
+margin-right: 50px;
+height: 20px;
+  }
+.desktopFilters label, .desktopFilters select {
+margin-right: 10px;
+  }
+.desktopFilters option {
+  margin-right: 5px;
+  }
+#searchBar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  }
+
+  /*DESKTOP - RUBRIQUE DU RESTAURANT*/
+section {
+display: block;
+max-width: 100%;
+padding: 30px;
+  }
+section img {
+  float: left;
+  height: 20vh;
+  width: 30vw;
+  object-fit: cover;
+  }
+.titleNote {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  }
+section h2 {
+  display: flex;
+  margin: 0;
+  padding-right: 40px;
+  }
+section h3 {
+  display: flex;
+  font-size: small;
+  font-weight: normal;
+  color: #818181;
+  margin: 0;
+  padding-left: 20px;
+  }
+section p {
+  display: flex;
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.25;
+  padding-bottom: 25px;
+  }
+section .bottomCard {
+  display: flex;
+  width: auto;
+  margin-bottom: 100px;
+  }
+
+/*DESKTOP - BOUTON DE RESERVATION*/
+.btn2 {
+  --size: 30px;
+  position: relative;
+  display: inline-flex;
+  align-items: right;
+  justify-content: flex-start;
+  color: #613c3c;
+  font-size: 15px;
+  font-weight: bold;
+  height: var(--size);
+  padding-inline: 50px 35px;
+  transition: color 0.5s;
+  text-decoration: none;
+  z-index: 3;
+  }
+.btn2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: var(--size);
+  width: var(--size);
+  border-radius: var(--size);
+  background: #613c3c
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 41" width="25" height="15"><path d="M 33 2 L 48 20 L 33 38" stroke-width="6" stroke="rgb(255, 255, 255)" fill="none"/></svg>')
+    left center no-repeat;
+  transition: width 0.5s, background-position 0.5s;
+  }
+.btn2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: var(--size);
+  width: var(--size);
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 41" width="20" height="20"><path d="M 0 20 L 48 20" stroke-width="6" stroke="rgb(255, 255, 255)" class="btn__arrow-body" fill="none"/></svg>')
+    left 0.5px center no-repeat;
+  transition: transform 0.5s, opacity 0.5s;
+  opacity: 0;
+  }
+.btn2:hover {
+  color: white;
+  }
+.btn2:hover::before {
+  width: 100%;
+  background-position: left 14px center;
+  }
+.btn2:hover::after {
+  opacity: 1;
+  transform: translateX(15px);
+  }
 }
+
+/* PRINTER */  @media print {
+}             
