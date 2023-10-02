@@ -31,13 +31,16 @@ let side_burger = document.getElementById("menu");
 let btnOpen = document.getElementById("btnOpen");
 let btnClose = document.getElementById("btnClose");
 
-btnOpen.onclick = openNav;
-btnClose.onclick = closeNav;
 
 function openNav() {
   side_burger.classList.add("active");
+  side_burger.style.position = "fixed";
 }
 
 function closeNav() {
   side_burger.classList.remove("active");
+  side_burger.style.position = "absolute";
 }
+
+btnOpen.onclick = openNav;
+btnClose.onclick = closeNav;
