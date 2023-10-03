@@ -256,7 +256,7 @@ section p {
   --size: 30px;
   position: relative;
   display: inline-flex;
-  align-items: center;
+  align-items: right;
   justify-content: flex-start;
   color: #613c3c;
   font-size: 15px;
@@ -278,8 +278,8 @@ section p {
   width: var(--size);
   border-radius: var(--size);
   background: #613c3c
-  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 41" width="25" height="15"><path d="M 33 2 L 48 20 L 33 38" stroke-width="6" stroke="rgb(255, 255, 255)" fill="none"/></svg>')
-  left center no-repeat;
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 41" width="25" height="15"><path d="M 33 2 L 48 20 L 33 38" stroke-width="6" stroke="rgb(255, 255, 255)" fill="none"/></svg>')
+    left center no-repeat;
   transition: width 0.5s, background-position 0.5s;
   }
 .btn2::after {
@@ -292,7 +292,7 @@ section p {
   height: var(--size);
   width: var(--size);
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 41" width="20" height="20"><path d="M 0 20 L 48 20" stroke-width="6" stroke="rgb(255, 255, 255)" class="btn__arrow-body" fill="none"/></svg>')
-  left 0.5px center no-repeat;
+    left 0.5px center no-repeat;
   transition: transform 0.5s, opacity 0.5s;
   opacity: 0;
   }
@@ -307,6 +307,7 @@ section p {
   opacity: 1;
   transform: translateX(15px);
   }
+
 
 /*FOOTER*/
 footer {
