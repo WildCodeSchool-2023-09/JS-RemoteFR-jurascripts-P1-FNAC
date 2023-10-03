@@ -1,11 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Rest-0</title>
+  </head>
+
+  <body>
+    <header>
+      <span class="logo"><img src="./assets/img/logo.png" alt="logo"></span>
+
+      <nav class="side_burger active" id="menu">
+        <a href="#" class="close" id="btnClose">×</a>
+         <ul>
+          <li><a href="">Se connecter</a></li>
+          <li><a href="">Créer mon compte</a></li>
+          <li><a href="">Référencement</a></li>
+         </ul>
+      </nav>
+
+        <a href="#" id="btnOpen">
+         <span class="burger_icon">
+          <span></span>
+          <span></span>
+          <span></span>
+         </span>
+        </a>
+
+      <div id="carousel">
+      <div id="carouselPano"></div>
+        <img src="assets/img/chevron2.png" class="bouton" id="g" />
+        <img src="assets/img/chevron2.png" class="bouton" id="d" />
+      </div>
+    </header>
+
+    <main>
+      <article>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nobis
+        voluptas natus in praesentium. Libero repudiandae dolorum animi maiores
+        sed tempora dolorem? Nostrum sapiente numquam ipsa beatae optio
+        consectetur blanditiis.
+      </article>
+
+      <h1>Wild School Place</h1>
+
+      <div class="filter_searchBar">
+        <span id="filterButton"><img src="./assets/img/filtre3.png" alt="filters"></span>
+        <input
+          type="text"
+          value="Recherchez votre restaurant préféré ..."
+          onfocus="if(this.value=='Recherchez votre restaurant préféré ...'') this.value='';"
+          id="searchBar"
+        />
+      </div>
+
+      <!--FILTRES VERSION DESKTOP-->
+      <div class="desktopFilters"> 
+        <label for="selectType">Catégories :</label>
+       <select name="filterType" id="filterType">
+        <option value="">--Filtrez par catégories--</option>
+        <option value="vege">Végétarien</option>
+        <option value="street">Street-Food</option>
+        <option value="gastro">Gastronomique</option>
+        <option value="reunion">Réunionais</option>
+        <option value="jap">Asiatique</option>
+        <option value="italien">Italien</option>
+       </select>
+
+      <label for="selectPrice">Prix :</label>
+       <select name="filterPrice" id="filterPrice">
+        <option value="">--Filtrez par prix--</option>
+        <option value="5&15">Entre 5€ et 15€</option>
+        <option value="15&30">Entre 15€ et 30€</option>
+        <option value="30&50">Entre 30€ et 50€</option>
+        <option value="infinite">Qu'est-ce que je vais faire de tout cet osseil ?</option>
+       </select>
+      </div>
+
+      <section class="rest_container">
+       <img src="./assets/img/mcdo.png">
+        <div class="titleNote">
+         <h2>Resto 1</h2>
+          <div class="note">4,7<span id="star">★</span></div>
+        </div>
+         <h3>Adresse</h3>
+          <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quis
+          repellat voluptas libero soluta iste! Beatae quidem eum placeat, odit
+          ducimus, quas quos neque voluptatum odio, obcaecati illo deserunt
+          nobis?
+          </p>
+          <div class="bottomCard">
+            <span class="price">Prix 5€ - 15€</span>
+            <span class="btn2">Réservation</span>
+          </div>
+          <br/> <hr align="center" width="180" />
+      </section>
+
+      <section class="rest_container">
+        <img src="./assets/img/mcdo.png">
+         <div class="titleNote">
+          <h2>Resto 1</h2>
+           <div class="note">4,7<span id="star">★</span></div>
+         </div>
+          <h3>Adresse</h3>
+           <p>
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quis
+           repellat voluptas libero soluta iste! Beatae quidem eum placeat, odit
+           ducimus, quas quos neque voluptatum odio, obcaecati illo deserunt
+           nobis?
+           </p>
+           <div class="bottomCard">
+             <span class="price">Prix 5€ - 15€</span>
+             <span class="btn2">Réservation</span>
+           </div>
+           <br/> <hr align="center" width="180" />
+       </section>
+
+       <section class="rest_container">
+        <img src="./assets/img/mcdo.png">
+         <div class="titleNote">
+          <h2>Resto 1</h2>
+           <div class="note">4,7<span id="star">★</span></div>
+         </div>
+          <h3>Adresse</h3>
+           <p>
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quis
+           repellat voluptas libero soluta iste! Beatae quidem eum placeat, odit
+           ducimus, quas quos neque voluptatum odio, obcaecati illo deserunt
+           nobis?
+           </p>
+           <div class="bottomCard">
+             <span class="price">Prix 5€ - 15€</span>
+             <span class="btn2">Réservation</span>
+           </div>
+           <br/> <hr align="center" width="180" />
+       </section>
+
+       <section class="rest_container">
+        <img src="./assets/img/mcdo.png">
+         <div class="titleNote">
+          <h2>Resto 1</h2>
+           <div class="note">4,7<span id="star">★</span></div>
+         </div>
+          <h3>Adresse</h3>
+           <p>
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quis
+           repellat voluptas libero soluta iste! Beatae quidem eum placeat, odit
+           ducimus, quas quos neque voluptatum odio, obcaecati illo deserunt
+           nobis?
+           </p>
+           <div class="bottomCard">
+             <span class="price">Prix 5€ - 15€</span>
+             <span class="btn2">Réservation</span>
+           </div>
+           <br/> <hr align="center" width="180" />
+       </section>
+
+       <section class="rest_container">
+        <img src="./assets/img/mcdo.png">
+         <div class="titleNote">
+          <h2>Resto 1</h2>
+           <div class="note">4,7<span id="star">★</span></div>
+         </div>
+          <h3>Adresse</h3>
+           <p>
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quis
+           repellat voluptas libero soluta iste! Beatae quidem eum placeat, odit
+           ducimus, quas quos neque voluptatum odio, obcaecati illo deserunt
+           nobis?
+           </p>
+           <div class="bottomCard">
+             <span class="price">Prix 5€ - 15€</span>
+             <span class="btn2">Réservation</span>
+           </div>
+           <br/> <hr align="center" width="180" />
+       </section>
+
+       <section class="rest_container">
+        <img src="./assets/img/mcdo.png">
+         <div class="titleNote">
+          <h2>Resto 1</h2>
+           <div class="note">4,7<span id="star">★</span></div>
+         </div>
+          <h3>Adresse</h3>
+           <p>
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quis
+           repellat voluptas libero soluta iste! Beatae quidem eum placeat, odit
+           ducimus, quas quos neque voluptatum odio, obcaecati illo deserunt
+           nobis?
+           </p>
+           <div class="bottomCard">
+             <span class="price">Prix 5€ - 15€</span>
+             <span class="btn2">Réservation</span>
+           </div>
+           <br/> <hr align="center" width="180" />
+       </section>
+
+       <section class="rest_container">
+        <img src="./assets/img/mcdo.png">
+         <div class="titleNote">
+          <h2>Resto 1</h2>
+           <div class="note">4,7<span id="star">★</span></div>
+         </div>
+          <h3>Adresse</h3>
+           <p>
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quis
+           repellat voluptas libero soluta iste! Beatae quidem eum placeat, odit
+           ducimus, quas quos neque voluptatum odio, obcaecati illo deserunt
+           nobis?
+           </p>
+           <div class="bottomCard">
+             <span class="price">Prix 5€ - 15€</span>
+             <span class="btn2">Réservation</span>
+           </div>
+           <br/> <hr align="center" width="180" />
+       </section>
+
+       <section class="rest_container">
+        <img src="./assets/img/mcdo.png">
+         <div class="titleNote">
+          <h2>Resto 1</h2>
+           <div class="note">4,7<span id="star">★</span></div>
+         </div>
+          <h3>Adresse</h3>
+           <p>
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quis
+           repellat voluptas libero soluta iste! Beatae quidem eum placeat, odit
+           ducimus, quas quos neque voluptatum odio, obcaecati illo deserunt
+           nobis?
+           </p>
+           <div class="bottomCard">
+             <span class="price">Prix 5€ - 15€</span>
+             <span class="btn2">Réservation</span>
+           </div>
+           <br/> <hr align="center" width="180" />
+       </section>
+             
+    </main>
+
+    <footer>
+      <span><a href="">A propos de nous</a></span>
+      <span><a href="">Conditions Générales</a></span>
+      <span><a href=""> Réseaux sociaux</a></span>
+       <ul
+        <li><a href="Instagram"><img src="./assets/img/insta.png" alt="logo"></a></li>
+        <li><a href="Facebook"><img src="./assets/img/fb4.png" alt="logo"></a></li>
+        <li><a href="X"><img src="./assets/img/X.png" alt="logo"></a></li>
+       </ul>
     
-</body>
+      <h6>&copy; 2023 FNAC</h6>
+    </footer>
+   <script src="script.js"></script>
+  </body>
 </html>
