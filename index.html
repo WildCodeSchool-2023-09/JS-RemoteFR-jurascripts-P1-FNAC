@@ -15,10 +15,7 @@
 
   <body>
     <header>
-      <span class="logo"><img src="./assets/img/logo.png" alt="logo" /></span>
-
       <nav class="side_burger active" id="menu">
-        <a href="#" class="close" id="btnClose">×</a>
         <ul>
           <li><a href="">Se connecter</a></li>
           <li><a href="">Créer mon compte</a></li>
@@ -26,28 +23,59 @@
         </ul>
       </nav>
 
-      <a href="#" id="btnOpen">
+      <div class="brgr_container" id="btnOpen">
         <span class="burger_icon">
           <span></span>
           <span></span>
           <span></span>
         </span>
-      </a>
-
-      <div id="carousel">
-        <div id="carouselPano"></div>
-        <img
-          src="assets/img/chevron2.png"
-          class="bouton"
-          id="g"
-          alt="chevron gauche"
-        />
-        <img
-          src="assets/img/chevron2.png"
-          class="bouton"
-          id="d"
-          alt="chevron droit"
-        />
+      </div>
+      <div class="slide-container">
+        <div class="custom-slider fade">
+          <img
+            class="slide-img"
+            src="./assets/img/carousel1.jpg"
+            alt="img carrousel"
+          />
+        </div>
+        <div class="custom-slider fade">
+          <img
+            class="slide-img"
+            src="./assets/img/carousel2.jpg"
+            alt="img carrousel"
+          />
+        </div>
+        <div class="custom-slider fade">
+          <img
+            class="slide-img"
+            src="./assets/img/carousel3.jpg"
+            alt="img carrousel"
+          />
+        </div>
+        <div class="custom-slider fade">
+          <img
+            class="slide-img"
+            src="./assets/img/carousel4.jpg"
+            alt="img carrousel"
+          />
+        </div>
+        <div class="custom-slider fade">
+          <img
+            class="slide-img"
+            src="./assets/img/carousel5.jpg"
+            alt="img carrousel"
+          />
+        </div>
+        <a id="prevOn" class="prev" onclick="plusSlides(-1)">❮</a>
+        <a id="nextOf" class="next" onclick="plusSlides(1)">❯</a>
+      </div>
+      <br />
+      <div class="slide-dot">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
       </div>
     </header>
 
@@ -82,9 +110,7 @@
           <option value="vege">Végétarien</option>
           <option value="street">Street-Food</option>
           <option value="gastro">Gastronomique</option>
-          <option value="reunion">Réunionais</option>
-          <option value="jap">Asiatique</option>
-          <option value="italien">Italien</option>
+          <option value="monde">Cuisine du monde</option>
         </select>
 
         <label>Prix :</label>
@@ -98,7 +124,6 @@
           </option>
         </select>
       </div>
-
       <div class="container">
         <section class="rest_container">
           <div class="imgcontainer">
