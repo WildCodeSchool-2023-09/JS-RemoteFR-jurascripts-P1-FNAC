@@ -1,46 +1,63 @@
-/*CARROUSEL*/
-document.body.onload = function () {
-  nbrImg = 6;
-  p = 0;
-  carouselPano = document.getElementById("carouselPano");
-  leftButton = document.getElementById("g");
-  rightButton = document.getElementById("d");
+//** Nouveau carrousel */
 
-  carouselPano.style.width = 100 * nbrImg + "vw";
-  for (i = 1; i <= nbrImg; i++) {
-    divCar = document.createElement("div");
-    divCar.className = "photo";
-    divCar.style.backgroundImage = "url('assets/img/carousel" + i + ".jpg')";
-    carouselPano.appendChild(divCar);
+let slideIndex = 1;
+showSlides(slideIndex);
+
+//*diapo suivant
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+//*diapo actuel
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+//*affichage diapo
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("custom-slider");
+  const dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1;
   }
-
-  leftButton.onclick = function () {
-    if (p > -nbrImg + 1) p--;
-    carouselPano.style.transform = "translate(" + p * 100 + "vw)";
-    carouselPano.style.transition = "all 0.8s ease";
-  };
-  rightButton.onclick = function () {
-    if (p < 0) p++;
-    carouselPano.style.transform = "translate(" + p * 100 + "vw)";
-    carouselPano.style.transition = "all 0.8s ease";
-  };
-};
-
-/*MENU BURGER*/
-let side_burger = document.getElementById("menu");
-let btnOpen = document.getElementById("btnOpen");
-let btnClose = document.getElementById("btnClose");
-
-
-function openNav() {
-  side_burger.classList.add("active");
-  side_burger.style.position = "fixed";
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
 
-function closeNav() {
-  side_burger.classList.remove("active");
-  side_burger.style.position = "absolute";
+//** ajout de setInterval pour faire défiler automatiquement les diapos toutes les secondes.
+
+let isBurgerMenuOpen = false;
+setInterval(() => {
+  if (!isBurgerMenuOpen) {
+    plusSlides(1);
+  }
+}, 2000);
+
+//**MENU BURGER*/
+
+function burgerToggle() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("active");
+  isBurgerMenuOpen = !isBurgerMenuOpen;
 }
 
-btnOpen.onclick = openNav;
-btnClose.onclick = closeNav;
+document.getElementById("btnOpen").addEventListener("click", burgerToggle);
+
+//*remove
+// const sideBurger = document.getElementById("menu");
+// const slideContainer = document.querySelector(".slide-container");
+
+// if (isBurgerMenuOpen == true) {
+//   document.body.addEventListener("click", () => {
+//     sideBurger.classList.remove("active");
+//   });
+// }
