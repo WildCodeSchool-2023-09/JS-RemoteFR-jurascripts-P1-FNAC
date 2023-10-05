@@ -1,18 +1,17 @@
-//** Nouveau carrousel */
-
+//*CAROUSEL
 let slideIndex = 1;
-showSlides(slideIndex);
 
-//*diapo suivant
+//*Image suivante
 function plusSlides(n) {
   showSlides((slideIndex += n));
 }
 
-//*diapo actuel
+//*Image actuelle
 function currentSlide(n) {
   showSlides((slideIndex = n));
 }
-//*affichage diapo
+
+//*Affichage image
 function showSlides(n) {
   let i;
   const slides = document.getElementsByClassName("custom-slider");
@@ -23,7 +22,7 @@ function showSlides(n) {
   if (n < 1) {
     slideIndex = slides.length;
   }
-  for (i = 0; i < slides.length; i++) {
+  for ( i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
@@ -32,112 +31,82 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
 }
+showSlides(slideIndex);
 
-//** ajout de setInterval pour faire défiler automatiquement les diapos toutes les secondes.
-
+//* Intervalle pour défilement auto
 let isBurgerMenuOpen = false;
 setInterval(() => {
   if (!isBurgerMenuOpen) {
     plusSlides(1);
   }
-}, 2000);
+}, 3000);
 
-/*MENU BURGER*/
 
+//*MENU BURGER
 function burgerToggle() {
   const menu = document.getElementById("menu");
+  const btnOpen = document.getElementById("btnOpen");
   menu.classList.toggle("active");
+  if (menu.classList[1]==="active") {
+    btnOpen.innerHTML = "&#10005";
+    btnOpen.style.fontSize = "1,1rem";
+  }
+  else {
+    //btnOpen.innerHTML = "&#9776";
+    btnOpen.innerHTML = "&#8942";
+    btnOpen.style.fontSize = "2rem";
+  }
   isBurgerMenuOpen = !isBurgerMenuOpen;
 }
 
 document.getElementById("btnOpen").addEventListener("click", burgerToggle);
 
 //*remove
-// const sideBurger = document.getElementById("menu");
-// const slideContainer = document.querySelector(".slide-container");
+const sideBurger = document.getElementById("menu");
+const slideContainer = document.querySelector(".slide-container");
+if (isBurgerMenuOpen == true) {
+  document.body.addEventListener("click", () => {
+  sideBurger.classList.remove("active");
+  });
+}
 
-// if (isBurgerMenuOpen == true) {
-//   document.body.addEventListener("click", () => {
-//     sideBurger.classList.remove("active");
-//   });
-// }
 
-
-/*BARRE DE RECHERCHE*/
+//*BARRE DE RECHERCHE
 function searchResto() {
-  const searchBar = document.getElementById('searchBar');
-  const lowerCase = searchBar.value.toLowerCase();
+  let searchBar = document.getElementById('searchBar');
+  searchBar = searchBar.value.toLowerCase();
   const restaurants = document.querySelectorAll('.rest_container');
+  const notFound = document.querySelector('.notFound');
 
   for (let i = 0; i < restaurants.length; i++) {
     const restaurant = restaurants[i];
     const titleResto = restaurant.querySelector('h2').textContent.toLowerCase();
-    if (titleResto.includes(lowerCase)) {
-      restaurant.style.display = 'block';
+    if (titleResto.includes(searchBar)) {
+      notFound.style.visibility = 'hidden';
+      restaurant.style.display = 'flex';
     } else {
       restaurant.style.display = 'none';
+      notFound.style.display = 'block';
     }
   }
 }
 
-const searchBar = document.getElementById('searchBar');
+let searchBar = document.getElementById('searchBar');
 searchBar.addEventListener('keyup', searchResto);
 
-/*AFFICHER AUCUN RESULTAT*/
-function noResult () {
-  const resultNo = element.innerHTML;
-  if (searchResto != '') {
-    return searchResto;
+//*EASTER EGG - BENOÎT KEUR KEUR 
+const easterEgg = document.getElementById("easterEgg");
+let currentSrc = easterEgg.src;
+let src1 = "./assets/img/plat_rougail.jpg";
+let src2 = "./assets/img/img_tmnt.jpg";
+let isDodo = true;
+
+easterEgg.addEventListener("click", () => {
+  if (isDodo) {
+    easterEgg.src = src1;
+    isDodo = false;
   } else {
-    return "Aucun résultat"
+    easterEgg.src = src2;
+    isDodo = true;
   }
-}
-
-/*FILTRES DE RECHERCHE*/
-/*PRIX*/
-function isfilterPrice() {
-  const filterPrice = document.getElementById('filterPrice').value;
-  const restaurants = document.querySelectorAll('.rest_container');
-
-  for (let i = 0; i < restaurants.length; i++) {
-    const restaurant = restaurants[i];
-    const price = restaurant.querySelector(.price).value;
-    if (price === 5&15) {
-      restaurant.style.display = 'block';
-    } if (price === 15&30) {
-        restaurant.style.display = 'block';
-    } if (price === 30&50) {
-          restaurant.style.display = 'block';
-    } if (price === 'infinite') {
-            restaurant.style.display = 'block';
-    } else {
-      restaurant.style.display = 'none';
-    }
-  }
-}
-const filterPrice = document.getElementById('filterPrice');
-filterPrice.addEventListener('change', searchResto);
-
-/*CATEGORIES*/
-function isfilterType() {
-  const filterType = document.getElementById('filterType').value;
-  const restaurants = document.querySelectorAll('.rest_container');
-
-  for (let i = 0; i < restaurants.length; i++) {
-    const restaurant = restaurants[i];
-    const type = restaurant.querySelector('/*CATEGORIES*/').value;
-    if (type === 'vege') {
-      restaurant.style.display = 'block';
-    } if (type === 'gastro') {
-      restaurant.style.display = 'block';
-    } if (type === 'street') {
-      restaurant.style.display = 'block';
-    } if (type === 'monde') {
-      restaurant.style.display = 'block';
-    } else {
-      restaurant.style.display = 'none';
-    }
-  }
-}
-const filterType = document.getElementById('filterType');
-filterPrice.addEventListener('change', searchResto);
+});
