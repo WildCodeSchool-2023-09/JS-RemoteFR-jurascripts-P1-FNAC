@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    min-height: 100vh;
+    background-image: linear-gradient(125deg,#6A7B76,#daf1f1 );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.bloc {
+    width: 100%;
+    text-align: center;
+    color: #daf1f1;
+    background: url(./assets/img/404.jpg) center no-repeat;
+    background-size: cover;
+    margin: 60px 0;
+}
+.bloc h1 {
+font-size: 175px;
+margin: 0;
+font-weight: 900;
+letter-spacing: 10px;
+-webkit-text-fill-color: transparent;
+-webkit-text-stroke-width: 4px;
+-webkit-text-stroke-color: #daf1f1;
+}
+
+.btn2 {
+    padding-bottom: 20px;
+    --size: 30px;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #613c3c;
+    font-size: 15px;
+    font-weight: bold;
+    height: var(--size);
+    padding-inline: 50px 30px;
+    transition: color 0.5s;
+    text-decoration: none;
+    z-index: 3;
+    
+  }
+  .btn2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: var(--size);
+    width: var(--size);
+    border-radius: var(--size);
+    background: #613c3c
+      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 41" width="25" height="15"><path d="M 33 2 L 48 20 L 33 38" stroke-width="6" stroke="rgb(255, 255, 255)" fill="none"/></svg>')
+      left center no-repeat;
+    transition: width 0.5s, background-position 0.5s;
+  }
+  .btn2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: var(--size);
+    width: var(--size);
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 41" width="20" height="20"><path d="M 0 20 L 48 20" stroke-width="6" stroke="rgb(255, 255, 255)" class="btn__arrow-body" fill="none"/></svg>')
+      left 0.5px center no-repeat;
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 0;
+  }
+  .btn2:hover {
+    color: white;
+  }
+  .btn2:hover::before {
+    width: 100%;
+    background-position: left 14px center;
+  }
+  .btn2:hover::after {
+    opacity: 1;
+    transform: translateX(15px);
+  }
