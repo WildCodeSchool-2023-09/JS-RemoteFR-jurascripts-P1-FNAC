@@ -39,7 +39,7 @@ setInterval(() => {
   if (!isBurgerMenuOpen) {
     plusSlides(1);
   }
-}, 3000);
+}, 5000);
 
 
 //*MENU BURGER
