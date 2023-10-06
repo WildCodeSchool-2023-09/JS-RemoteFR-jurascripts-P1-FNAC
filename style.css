@@ -273,6 +273,7 @@ section img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  margin: auto;
 }
 
 .imgcontainer {
@@ -311,6 +312,7 @@ section img {
 
 section p {
  width: 85% ;
+ height: 130px;
   line-height: 1,5;
   font-size: 0.8rem;
 }
