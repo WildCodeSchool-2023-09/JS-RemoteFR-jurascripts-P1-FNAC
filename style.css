@@ -237,6 +237,7 @@ option {
   width: 40vw;
   height: 3vh;
   font-style: italic;
+  font-size: .73rem;
   color: lightgrey;
   margin-right: auto;
 }
@@ -513,6 +514,7 @@ cursor: pointer;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  font-size: 1.4rem;
 }
 
 
